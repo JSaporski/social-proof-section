@@ -20,17 +20,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-body:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: absolute;
-  background: url("../img/bg-pattern-bottom-desktop.svg") no-repeat,
-    url("../img/bg-pattern-top-desktop.svg") no-repeat;
-  background-position: bottom -10rem right -2rem, top 0 left -2rem;
+  background: url("../img/bg-pattern-bottom-desktop.svg") no-repeat right bottom,
+    url("../img/bg-pattern-top-desktop.svg") no-repeat left top;
 }
 
 a {
@@ -54,7 +45,7 @@ img {
 
 .main-content {
   max-width: 1200px;
-  padding: 10px 10px;
+  padding: 120px 10px;
 }
 
 .introduction {
@@ -114,7 +105,7 @@ img {
 }
 
 .review-item span {
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 0;
   font-weight: bold;
   color: hsl(300, 43%, 22%);
@@ -125,13 +116,13 @@ img {
 }
 
 .testimonials {
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 .testimonials-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 
 .testimonials-item {
@@ -143,12 +134,12 @@ img {
 
 .testimonials-item:nth-child(2) {
   position: relative;
-  top: 15px;
+  top: 20px;
 }
 
 .testimonials-item:nth-child(3) {
   position: relative;
-  top: 30px;
+  top: 40px;
 }
 
 .user-infos {
@@ -186,10 +177,9 @@ img {
 @media only screen and (max-width: 1109px) {
   body {
     min-height: initial;
-  }
-
-  body:before {
-    display: none;
+    background: url("../img/bg-pattern-bottom-mobile.svg") no-repeat right
+        bottom,
+      url("../img/bg-pattern-top-mobile.svg") no-repeat left top;
   }
 
   .main-content {
@@ -234,30 +224,22 @@ img {
     gap: 25px;
   }
 
-  .review-item:nth-child(1) {
-    position: initial;
-    right: 0;
-  }
-
-  .review-item:nth-child(2) {
-    position: initial;
-    right: 0;
-  }
-
-  .testimonials-item:nth-child(2) {
-    position: initial;
-    top: 0;
-  }
-
+  .review-item:nth-child(1),
+  .review-item:nth-child(2),
+  .review-item:nth-child(3),
+  .testimonials-item:nth-child(2),
   .testimonials-item:nth-child(3) {
     position: initial;
+    right: 0;
     top: 0;
   }
 }
 
 @media only screen and (max-width: 769px) {
-  body:before {
-    display: none;
+  .introduction-about h1 {
+    max-width: 85%;
+    margin: 0 auto;
+    font-size: 2.5em;
   }
 
   .introduction-review {
